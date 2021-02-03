@@ -8,8 +8,10 @@
     "@testing-library/user-event": "^12.6.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-player": "^2.8.2",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "world-countries-capitals": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
