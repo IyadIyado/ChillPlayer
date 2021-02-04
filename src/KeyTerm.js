@@ -9,7 +9,7 @@ export default function KeyTerm(props) {
     const wcc = require("world-countries-capitals");
 
     let countryList = wcc.getAllCountries();
-    let genre = ["Lo-Fi", "Classical music", "Jazz", "Ambient"]
+    let genre = ["Lo-Fi", "Classical music", "Jazz", "Ambient", "Oldies Music", "Anime and Chill", "Video Games"]
 
     if (props.term === "Drive 4k") {
         return (
@@ -44,7 +44,7 @@ export default function KeyTerm(props) {
                             defaultValue={"Lo-Fi"}
                             >
                             {genre.map((name) => (
-                                <MenuItem key={name} value={name}>{name}</MenuItem>
+                                <MenuItem key={name} value={(name)}>{name}</MenuItem>
                             ))}
                             </Select>
                         </FormControl>
