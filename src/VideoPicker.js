@@ -34,6 +34,7 @@ export default function VideoPicker(props) {
             return res.json();
         }).then( function (obj) {
             console.log(obj);
+            console.log(key3)
             getLink(obj);
         })
     }
