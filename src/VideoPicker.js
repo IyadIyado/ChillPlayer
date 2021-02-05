@@ -19,6 +19,7 @@ export default function VideoPicker(props) {
 
     const key1 = "AIzaSyCQHQ8-OJh9tNIRxLd21QTiEcdy295gXK0"
     const key2 = "AIzaSyA6wruY8sNsnhYoOz25AVDHnL_uiagFXXU"
+    const key3 = "AIzaSyCHhTG5B6DjLIwCW1oCGraI4lobXhZLglk"
 
     //This function will extract the URL of a randomly selected video and set the URL state to match it.
     function getLink(object) {
@@ -28,7 +29,7 @@ export default function VideoPicker(props) {
 
     // Fetch the data from the youtube api based on the selected terms
     function play () {
-        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q="+ props.type + props.term + "&key=" + key1 + "&videoDuration="+ props.length + "&type=video")
+        fetch("https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q="+ props.type + props.term + "&key=" + key3 + "&videoDuration="+ props.length + "&type=video")
         .then(function(res) {
             return res.json();
         }).then( function (obj) {
