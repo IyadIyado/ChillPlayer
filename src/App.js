@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import KeyTerm from "./KeyTerm"
 import VideoPicker from "./VideoPicker"
 import Player from "./Player"
+
 import Drawer from "@material-ui/core/Drawer";
-// import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -13,13 +13,15 @@ import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import ListItem from "@material-ui/core/ListItem";
 
-import "./Components/Style/App.css";
+
 
 const useStyles = makeStyles((theme) => ({
 	drawerPaper: {
 		width: "12%",
 		alignItems: "center",
-		backdropFilter: "blur(8px)",
+		background: "linear-gradient(75deg, #FE6B8B 30%, #FF8E53 90%)",
+		borderRadius: "3px",
+		
 	},
 	}));
 
@@ -30,18 +32,23 @@ const useStyles = makeStyles((theme) => ({
 		const [url, setUrl] = useState("");
 		const classes = useStyles();
 
-
+	
+	//This function will extract the value from the user selected option. In this case, it will set the type of the video accordingly.
+	//If visual loops was selected, the function will reset the keyterm value, since it is not necessary and would avoid conflict of search results.
 	const handleTypeChange = (event) => {
 		setType(event.target.value);
-		if(event.target.value === "Neon" || event.target.value === "VisualEffects") {
-		setTerm("");
+		if(event.target.value === "Visual Loops") {
+			setTerm("");
 		}
 	};
 
+	//This function will extract the value from the user selected option and will set the duration/length of the video.
 	const handleLengthChange = (event) => {
 		setLength(event.target.value);
 	};
 
+	//This function will extract the value from the user selected option and will set the keyterm value. However, depending on the keyterm selected,
+	//this function will adjust it accordingly to better match the theme of the site. 
 	function handleTermChange(event){
 		let newTerm = event.target.value;
 		if (newTerm === "Oldies Music") {
@@ -53,6 +60,8 @@ const useStyles = makeStyles((theme) => ({
 		}
 	}
 
+	//This is the list element, and it contains the menue where users will interact with the site. In here, users are able to select what
+	//type of videos they want to watch and the duration of the videos.
 	const list = (
 		<List style={{display:"flex", flexDirection:"column"}}>
 		<ListItem>
@@ -66,8 +75,7 @@ const useStyles = makeStyles((theme) => ({
 			>
 				<MenuItem value={"Drive 4k"}>Drive</MenuItem>
 				<MenuItem value={"Music"}>Music</MenuItem>
-				<MenuItem value={"VisualEffects"}>Visual Effects</MenuItem>
-				<MenuItem value={"Neon"}>Neon</MenuItem>
+				<MenuItem value={"Visual Loops"}>Visual Loops</MenuItem>
 			</Select>
 			</FormControl>
 		</ListItem>
@@ -99,20 +107,19 @@ const useStyles = makeStyles((theme) => ({
 	);
 
 	return (
-		<>
-		<Drawer
-			className={classes.drawer}
-			variant="permanent"
-			anchor="right"
-			BackdropProps={{ style: { backgroundColor: "transparent" } }}
-			classes={{
-			paper: classes.drawerPaper,
-			}}
-		>
-			{list}
-		</Drawer>
-		<KeyTerm/>
-		<Player url={url}/>
-		</>
+		<div>
+			<Drawer
+				className={classes.drawer}
+				variant="permanent"
+				anchor="right"
+				classes={{
+				paper: classes.drawerPaper,
+				}}
+			>
+				{list}
+			</Drawer>
+			<KeyTerm/>
+			<Player url={url}/>
+		</div>
 	);
 	}

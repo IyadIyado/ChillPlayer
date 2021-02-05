@@ -5,11 +5,14 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 
+//This component will allow the user to pick a term based off of their type selection. If they selected Drive or Music, this component will present them with the options for
+//countires (if Drive was selected) and different music genres (if Music was selected)
+
 export default function KeyTerm(props) {
     const wcc = require("world-countries-capitals");
 
     let countryList = wcc.getAllCountries();
-    let genre = ["Lo-Fi", "Classical music", "Jazz", "Ambient", "Oldies Music", "Anime and Chill", "Video Games"]
+    let genre = ["Ambient", "Anime and Chill", "Classical Music", "Jazz", "Oldies Music", "Video Games", "Lo-Fi"]
 
     if (props.term === "Drive 4k") {
         return (
