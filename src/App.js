@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 	//If visual loops was selected, the function will reset the keyterm value, since it is not necessary and would avoid conflict of search results.
 	const handleTypeChange = (event) => {
 		setType(event.target.value);
-		if(event.target.value === "Visual Loops") {
+		if(event.target.value === "Visual Loops 4k") {
 			setTerm("");
 		}
 	};
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 			>
 				<MenuItem value={"Drive 4k"}>Drive</MenuItem>
 				<MenuItem value={"Music"}>Music</MenuItem>
-				<MenuItem value={"Visual Loops"}>Visual Loops</MenuItem>
+				<MenuItem value={"Visual Loops 4k"}>Visual Loops</MenuItem>
 			</Select>
 			</FormControl>
 		</ListItem>
@@ -108,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
 
 	return (
 		<div>
+			<Player url={url}/>
 			<Drawer
 				className={classes.drawer}
 				variant="permanent"
@@ -119,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
 				{list}
 			</Drawer>
 			<KeyTerm/>
-			<Player url={url}/>
+			
 		</div>
 	);
 	}

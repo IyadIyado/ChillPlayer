@@ -12,7 +12,7 @@ export default function KeyTerm(props) {
     const wcc = require("world-countries-capitals");
 
     let countryList = wcc.getAllCountries();
-    let genre = ["Ambient", "Anime and Chill", "Classical Music", "Jazz", "Oldies Music", "Video Games", "Lo-Fi"]
+    let genre = ["Ambient", "Anime and Chill", "Classical Music", "Jazz", "Lo-Fi", "Oldies Music", "Video Games"]
 
     if (props.term === "Drive 4k") {
         return (

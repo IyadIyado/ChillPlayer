@@ -17,8 +17,6 @@ export default function VideoPicker(props) {
     return x;
     }
 
-    const key1 = "AIzaSyCQHQ8-OJh9tNIRxLd21QTiEcdy295gXK0"
-    const key2 = "AIzaSyA6wruY8sNsnhYoOz25AVDHnL_uiagFXXU"
     const key3 = "AIzaSyCHhTG5B6DjLIwCW1oCGraI4lobXhZLglk"
 
     //This function will extract the URL of a randomly selected video and set the URL state to match it.
@@ -34,7 +32,6 @@ export default function VideoPicker(props) {
             return res.json();
         }).then( function (obj) {
             console.log(obj);
-            console.log(key3)
             getLink(obj);
         })
     }

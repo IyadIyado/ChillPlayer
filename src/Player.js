@@ -12,9 +12,9 @@ export default function Player(props){
             <ReactPlayer
                 className='react-player'
                 url={'https://www.youtube.com/watch?v='+ props.url}
-                height='955px'
-                width='88.5%'
                 loop={true}
+                height="100vh"
+                width="88.5%"
                 controls={true}
                 playing={true}
             />
@@ -23,4 +23,6 @@ export default function Player(props){
     )
 }
 
+//height="950px"
+// width="88.5%"
 
